@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DecimalPipe, NgFor } from '@angular/common';
+import { ModalService } from '../modal.service';
 
-  interface Country {
-    name: string;
-    email: string;
-    phone: number;
-    address: string;
-  }
+interface Country {
+  name: string;
+  email: string;
+  phone: number;
+  address: string;
+}
 
-  
 const COUNTRIES: Country[] = [
   {
     name: 'Russia',
@@ -44,9 +44,13 @@ const COUNTRIES: Country[] = [
   imports: [NgFor, DecimalPipe],
 })
 export class TableComponent implements OnInit {
-  constructor() {}
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {}
 
   countries = COUNTRIES;
+
+  openRemoveModal() {
+    this.modalService.openRemoveModal("");
+  }
 }

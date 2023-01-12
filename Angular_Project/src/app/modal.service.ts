@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { RemoveComponent } from './remove/remove.component';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,13 +7,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ModalService {
-  modalRef?: NgbModal;
+  modalRef?: BsModalRef;
   private urlSource = new BehaviorSubject('');
   currentUrl = this.urlSource.asObservable();
+  constructor(private modalService: BsModalService) {}
 
-  constructor(private modalService: NgbActiveModal) {}
-  openModal(url: string) {
-    this.urlSource.next(url);
+  openRemoveModal(url: string) {
     this.modalRef = this.modalService.show(RemoveComponent);
   }
   closeModal() {
