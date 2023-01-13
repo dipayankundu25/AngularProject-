@@ -8,11 +8,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ModalService {
   modalRef?: BsModalRef;
-  private urlSource = new BehaviorSubject('');
-  currentUrl = this.urlSource.asObservable();
+  // private urlSource = new BehaviorSubject('');
+  // currentUrl = this.urlSource.asObservable();
   constructor(private modalService: BsModalService) {}
 
-  openRemoveModal(url: string) {
+  openRemoveModal() {
     this.modalRef = this.modalService.show(RemoveComponent);
   }
   closeModal() {
