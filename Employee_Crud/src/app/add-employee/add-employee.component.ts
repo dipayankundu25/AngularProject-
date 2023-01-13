@@ -8,6 +8,10 @@ import { ModalService } from '../modal.service';
 })
 export class AddEmployeeComponent implements OnInit {
   employeeList: any = [];
+  newName: any;
+  newEmail: any;
+  newAddress: any;
+  newPhone: any;
   constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
@@ -15,21 +19,14 @@ export class AddEmployeeComponent implements OnInit {
       this.employeeList = res;
     });
   }
-  newName: any;
-  newEmail: any;
-  newAddress: any;
-  newPhone: any;
 
-  addNewEmployee(){
-    this.employeeList.push(
-      {
-        name : this.newName,
-        email: this.newEmail,
-        address : this.newAddress,
-        phone : this.newPhone
-      }
-    )
-
+  addNewEmployee() {
+    this.employeeList.push({
+      name: this.newName,
+      email: this.newEmail,
+      address: this.newAddress,
+      phone: this.newPhone,
+    });
     this.modalService.newUpdateList(this.employeeList);
     this.closeAddModal();
   }
