@@ -14,11 +14,16 @@ export class EmployeeTableComponent implements OnInit {
       this.employeeList = res;
     });
   }
-  openDeleteModal() {
+  openDeleteModal(i : any) {
+    this.modalService.changeDeleteIndex(i);
     this.modalService.openDeleteModal('data');
   }
 
   openAddModal() {
     this.modalService.openAddModal('data');
+  }
+  openEditModal(i : any) {
+    this.modalService.changeEditIndex(i);
+    this.modalService.openEditModal('data');
   }
 }

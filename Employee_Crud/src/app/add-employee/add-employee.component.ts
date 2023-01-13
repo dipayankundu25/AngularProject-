@@ -8,10 +8,10 @@ import { ModalService } from '../modal.service';
 })
 export class AddEmployeeComponent implements OnInit {
   employeeList: any = [];
-  newName: any;
-  newEmail: any;
-  newAddress: any;
-  newPhone: any;
+  newName: any = '';
+  newEmail: any= '';
+  newAddress: any = '';
+  newPhone: any = '';
   constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {

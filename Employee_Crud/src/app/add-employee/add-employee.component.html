@@ -21,5 +21,5 @@
 </div>
 <div class="modal-footer pull-right">
   <span (click)="closeAddModal()" class="cursor">Cancel</span>
-  <button class="btn btn-success" (click)="addNewEmployee()">Add</button>
+  <button class="btn btn-success" (click)="addNewEmployee()" [disabled]=" newName == '' || newEmail == '' || newAddress == '' || newPhone == '' ">Add</button>
 </div>

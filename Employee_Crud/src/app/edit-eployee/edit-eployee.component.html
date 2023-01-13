@@ -1,1 +1,27 @@
-<p>edit-eployee works!</p>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Edit Employee Details</h4>
+  <button type="button" class="btn-close close pull-right " (click)="closeEditModal()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p><label>Name</label>
+    <input type="text" class="form-control" [(ngModel)]="editName">
+  </p>
+  <p><label>Email</label>
+    <input type="email" class="form-control" [(ngModel)]="editEmail">
+  </p>
+  <p>
+    <label>Address</label>
+    <br>
+    <textarea name="" id="" cols="60" rows="3" [(ngModel)]="editAddress"></textarea>
+  </p>
+  <p>
+    <label>Phone</label>
+    <input type="text" class="form-control" [(ngModel)]="editPhone">
+  </p>
+</div>
+<div class="modal-footer pull-right">
+  <span (click)="closeEditModal()" class="cursor">Cancel</span>
+  <button class="btn btn-warning text-light" (click)="updateNewDetails()">Update</button>
+</div>
