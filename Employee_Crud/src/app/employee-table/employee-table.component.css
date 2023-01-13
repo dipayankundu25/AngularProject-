@@ -1,3 +1,9 @@
 .bg-navy{
   background-color:#336699;
 }
+.text{
+  font-size: 1.563rem;
+}
+.bold{
+  font-weight: 600;
+}

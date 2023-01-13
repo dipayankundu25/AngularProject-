@@ -13,34 +13,34 @@ export class ModalService {
   addemployeeModalRef?: BsModalRef;
   private employeeList = new BehaviorSubject([
     {
-    name:"ax",
-    email:"ax",
-    address:"add",
-    phone:"0000"
+    name:"Thomas Hardy",
+    email:"thomashardy@mail.com",
+    address:"89 Chiaroscuro Rd, Portland, USA",
+    phone:"(171)555-2222"
   },
     {
-    name:"ax",
-    email:"ax",
-    address:"add",
-    phone:"0000"
+    name:"Dominique Perrier",
+    email:"dominiqueperrier@mail.com",
+    address:"Obere Str. 57, Berline, Germany",
+    phone:"(313)555-5735"
   },
     {
-    name:"ax",
-    email:"ax",
-    address:"add",
-    phone:"0000"
+    name:"Maria Anders",
+    email:"mariaanders@mail.com",
+    address:"25, rue Lauriston, Paris, France",
+    phone:"(503)55-9931"
   },
     {
-    name:"ax",
-    email:"ax",
-    address:"add",
-    phone:"0000"
+    name:"Fran Wilson",
+    email:"franwilson@mail.com",
+    address:"C/ Araquil, 67, Madrid, Spain",
+    phone:"(204)619-5731"
   },
     {
-    name:"ax",
-    email:"ax",
-    address:"add",
-    phone:"0000"
+    name:"Martin Blank",
+    email:"martinblank@mail.com",
+    address:"Via Monte Bianco 34, Turin, Italy",
+    phone:"(480)631-2097"
   }
 ]);
   currentEmployeeList = this.employeeList.asObservable();
