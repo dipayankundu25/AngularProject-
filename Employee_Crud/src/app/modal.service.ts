@@ -11,12 +11,38 @@ import { DeleteComponent } from './delete/delete.component';
 export class ModalService {
   deleteModalRef?: BsModalRef;
   addemployeeModalRef?: BsModalRef;
-  private employeeList = new BehaviorSubject([{
+  private employeeList = new BehaviorSubject([
+    {
     name:"ax",
     email:"ax",
     address:"add",
     phone:"0000"
-  }]);
+  },
+    {
+    name:"ax",
+    email:"ax",
+    address:"add",
+    phone:"0000"
+  },
+    {
+    name:"ax",
+    email:"ax",
+    address:"add",
+    phone:"0000"
+  },
+    {
+    name:"ax",
+    email:"ax",
+    address:"add",
+    phone:"0000"
+  },
+    {
+    name:"ax",
+    email:"ax",
+    address:"add",
+    phone:"0000"
+  }
+]);
   currentEmployeeList = this.employeeList.asObservable();
   constructor(private modalService: BsModalService) {}
 

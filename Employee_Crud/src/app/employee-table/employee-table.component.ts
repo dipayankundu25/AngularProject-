@@ -7,14 +7,18 @@ import { ModalService } from '../modal.service';
   styleUrls: ['./employee-table.component.css'],
 })
 export class EmployeeTableComponent implements OnInit {
+  employeeList: any = [];
   constructor(private modalService: ModalService) {}
-
   ngOnInit(): void {
     this.modalService.currentEmployeeList.subscribe((res) => {
-      console.log(res);
+      this.employeeList = res;
     });
   }
   openDeleteModal() {
     this.modalService.openDeleteModal('data');
+  }
+
+  openAddModal() {
+    this.modalService.openAddModal('data');
   }
 }

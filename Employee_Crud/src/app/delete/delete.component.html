@@ -1,1 +1,14 @@
-<p>delete works!</p>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Delete Employee</h4>
+  <button type="button" class="btn-close close pull-right " (click)="closeDeleteModal()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>Are you sure you want to delete these Records</p>
+  <p>This action cannot be undone.</p>
+</div>
+<div class="modal-footer pull-right">
+  <span (click)="closeDeleteModal()">Cancel</span>
+  <button class="btn btn-danger">Delete</button>
+</div>
