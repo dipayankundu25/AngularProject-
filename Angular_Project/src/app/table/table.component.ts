@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DecimalPipe, NgFor } from '@angular/common';
 import { ModalService } from '../modal.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
-  standalone: true,
-  imports: [NgFor, DecimalPipe],
 })
 export class TableComponent implements OnInit {
   constructor(private modalService: ModalService) {}
