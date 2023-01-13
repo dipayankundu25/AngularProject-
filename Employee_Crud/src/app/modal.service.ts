@@ -58,4 +58,8 @@ export class ModalService {
   closeAddModal() {
     this.addemployeeModalRef?.hide();
   }
+
+  newUpdateList(data : any){
+    this.employeeList.next(data)
+  }
 }

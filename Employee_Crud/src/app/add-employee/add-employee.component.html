@@ -5,21 +5,21 @@
   </button>
 </div>
 <div class="modal-body">
-  <p><label for="">Name</label>
-  <input type="text" class="form-control"></p>
-  <p><label for="">Email</label>
-  <input type="email" class="form-control"></p>
+  <p><label>Name</label>
+  <input type="text" class="form-control" [(ngModel)]="newName"></p>
+  <p><label>Email</label>
+  <input type="email" class="form-control"  [(ngModel)]="newEmail"></p>
   <p>
-    <label for="">Address</label>
+    <label>Address</label>
     <br>
-    <textarea name="" id="" cols="60" rows="3"></textarea>
+    <textarea name="" id="" cols="60" rows="3"  [(ngModel)]="newAddress"></textarea>
   </p>
   <p>
-    <label for="">Phone</label>
-    <input type="text" class="form-control">
+    <label>Phone</label>
+    <input type="text" class="form-control"  [(ngModel)]="newPhone">
   </p>
 </div>
 <div class="modal-footer pull-right">
   <span (click)="closeAddModal()" class="cursor">Cancel</span>
-  <button class="btn btn-success">Add</button>
+  <button class="btn btn-success" (click)="addNewEmployee()">Add</button>
 </div>

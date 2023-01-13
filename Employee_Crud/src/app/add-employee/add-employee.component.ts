@@ -7,9 +7,32 @@ import { ModalService } from '../modal.service';
   styleUrls: ['./add-employee.component.css'],
 })
 export class AddEmployeeComponent implements OnInit {
+  employeeList: any = [];
   constructor(private modalService: ModalService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.modalService.currentEmployeeList.subscribe((res) => {
+      this.employeeList = res;
+    });
+  }
+  newName: any;
+  newEmail: any;
+  newAddress: any;
+  newPhone: any;
+
+  addNewEmployee(){
+    this.employeeList.push(
+      {
+        name : this.newName,
+        email: this.newEmail,
+        address : this.newAddress,
+        phone : this.newPhone
+      }
+    )
+
+    this.modalService.newUpdateList(this.employeeList);
+    this.closeAddModal();
+  }
 
   closeAddModal() {
     this.modalService.closeAddModal();
