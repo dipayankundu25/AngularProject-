@@ -22,7 +22,7 @@
       <thead>
         <tr>
           <th scope="col">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="" [(ngModel)]="allChecked" (click)="allEmployeeChecked()">
           </th>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employeeList| paginate: { itemsPerPage: 2, currentPage: pagination }; index as i ">
+        <tr *ngFor="let employee of employeeList| paginate: { itemsPerPage: 4, currentPage: pagination }; index as i ">
           <td> <input type="checkbox" name="" id="" [(ngModel)]="employee.isChecked"> </td>
           <td>
             {{ employee.name }}
@@ -57,5 +57,10 @@
       </tbody>
     </table>
   </div>
-  <pagination-controls (pageChange)="paginationControl($event)"></pagination-controls>
+<div class="container">
+  <div class="d-flex align-items-center">
+    <span class="text-navy">Showing 4 of {{employeeList.length}} items</span>
+    <pagination-controls (pageChange)="paginationControl($event)" class="ms-auto"></pagination-controls>
+  </div>
+</div>
 </div>
