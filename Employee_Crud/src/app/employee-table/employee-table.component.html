@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employeeList; index as i">
+        <tr *ngFor="let employee of employeeList| paginate: { itemsPerPage: 2, currentPage: pagination }; index as i ">
           <td> <input type="checkbox" name="" id="" [(ngModel)]="employee.isChecked"> </td>
           <td>
             {{ employee.name }}
@@ -57,4 +57,5 @@
       </tbody>
     </table>
   </div>
+  <pagination-controls (pageChange)="paginationControl($event)"></pagination-controls>
 </div>

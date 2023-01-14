@@ -9,6 +9,7 @@ import { ModalService } from '../modal.service';
 export class EmployeeTableComponent implements OnInit {
   employeeList: any = [];
   temp = true;
+  pagination:any;
   constructor(private modalService: ModalService) {}
   ngOnInit(): void {
     this.modalService.currentEmployeeList.subscribe((res) => {
@@ -31,5 +32,8 @@ export class EmployeeTableComponent implements OnInit {
     this.modalService.updateEmployeeDetails(this.employeeList);
     this.modalService.changeMultiselectFlag(true);
     this.modalService.openDeleteModal();
+  }
+  paginationControl(event:any){
+    this.pagination =event;
   }
 }

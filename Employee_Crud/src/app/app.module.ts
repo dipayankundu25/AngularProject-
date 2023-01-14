@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { EmployeeTableComponent } from './employee-table/employee-table.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EditEployeeComponent } from './edit-eployee/edit-eployee.component';
 
@@ -23,6 +24,7 @@ import { EditEployeeComponent } from './edit-eployee/edit-eployee.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgxPaginationModule,
     ModalModule.forRoot(),
   ],
   providers: [],
