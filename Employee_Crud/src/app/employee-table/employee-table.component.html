@@ -1,7 +1,7 @@
 <div class="container">
   <div class="w-100 d-flex bg-navy p-2 mt-2 text-light">
     <span class="text">Manage <span class="bold">Employees</span></span>
-    <button class="btn btn-danger ms-auto rounded-0 d-flex justify-content-center align-items-center">
+    <button class="btn btn-danger ms-auto rounded-0 d-flex justify-content-center align-items-center" (click)="multiDeleteClicked()">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill mx-1"
         viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let employee of employeeList; index as i">
-          <td> <input type="checkbox" name="" id=""> </td>
+          <td> <input type="checkbox" name="" id="" [(ngModel)]="employee.isChecked"> </td>
           <td>
             {{ employee.name }}
           </td>

@@ -22,6 +22,7 @@ export class AddEmployeeComponent implements OnInit {
 
   addNewEmployee() {
     this.employeeList.push({
+      isChecked: false,
       name: this.newName,
       email: this.newEmail,
       address: this.newAddress,

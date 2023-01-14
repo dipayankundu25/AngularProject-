@@ -8,6 +8,7 @@ import { ModalService } from '../modal.service';
 })
 export class EmployeeTableComponent implements OnInit {
   employeeList: any = [];
+  temp = true;
   constructor(private modalService: ModalService) {}
   ngOnInit(): void {
     this.modalService.currentEmployeeList.subscribe((res) => {
@@ -16,14 +17,19 @@ export class EmployeeTableComponent implements OnInit {
   }
   openDeleteModal(i : any) {
     this.modalService.changeDeleteIndex(i);
-    this.modalService.openDeleteModal('data');
+    this.modalService.openDeleteModal();
   }
 
   openAddModal() {
-    this.modalService.openAddModal('data');
+    this.modalService.openAddModal();
   }
   openEditModal(i : any) {
     this.modalService.changeEditIndex(i);
-    this.modalService.openEditModal('data');
+    this.modalService.openEditModal();
+  }
+  multiDeleteClicked(){
+    this.modalService.updateEmployeeDetails(this.employeeList);
+    this.modalService.changeMultiselectFlag(true);
+    this.modalService.openDeleteModal();
   }
 }
